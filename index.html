@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <title>Decoder - a fun logic game</title>
+    <style>
+      #body {
+        background-color: rgb(40, 60, 80);
+        margin: 0;
+        padding: 0;
+      }
+      #column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #heading {
+        width: 300px;
+        margin: 16px 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      #game-section {
+        width: 300px;
+        margin: 16px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #footer {
+        width: 300px;
+        margin: 16px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(200, 220, 240);
+        border-radius: 12px;
+        color: white;
+      }
+      #reset-button {
+        min-height: 32px;
+        width: 96px;
+        background-color: rgb(200, 220, 240);
+        border: 2px solid rgb(95, 109, 122);
+        border-radius: 4px;
+        margin: 16px auto;
+      }
+      .text-green {
+        color: rgb(50, 200, 120);
+      }
+      .text-yellow {
+        color: rgb(255, 206, 88);
+      }
+      .text-red {
+        color: rgb(250, 100, 100);
+      }
+      .italic {
+        font-style: italic;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      .check-button {
+        max-width: 64px;
+        min-height: 32px;
+        background-color: rgb(220, 240, 250);
+        border: 2px solid rgb(140, 160, 180);
+        border-radius: 4px;
+        /* margin: 0 16px; */
+      }
+      p {
+        width: 280px;
+        text-align: center;
+      }
+      h1 {
+        font-size: 72px;
+        font-family: "Courier New", Courier, monospace;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      h3 {
+        font-size: 24px;
+        font-family: "Courier New", Courier, monospace;
+        text-align: center;
+      }
+      form {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 18px 0px;
+      }
+      input {
+        max-width: 28px;
+        min-height: 30px;
+        padding-left: 12px;
+        border-radius: 6px;
+        font-size: 20px;
+        font-style: bold;
+      }
+      ul {
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <div id="column">
+      <div id="heading">
+        <h1><span class="text-yellow">De</span><span class="text-green">coder</span></h1>
+      </div>
+      <div id="game-section">
+        <form id="form0" class="form">
+          <input id="box00" class="box" type="number" min="0" max="9" />
+          <input id="box01" class="box" type="number" min="0" max="9" />
+          <input id="box02" class="box" type="number" min="0" max="9" />
+          <input id="box03" class="box" type="number" min="0" max="9" />
+          <input id="box04" class="box" type="number" min="0" max="9" />
+          <button type="button" id="button0" class="check-button" onclick="check(0)">Check</button>
+        </form>
+        <form id="form1" class="form">
+          <input id="box10" class="box" type="number" min="0" max="9" />
+          <input id="box11" class="box" type="number" min="0" max="9" />
+          <input id="box12" class="box" type="number" min="0" max="9" />
+          <input id="box13" class="box" type="number" min="0" max="9" />
+          <input id="box14" class="box" type="number" min="0" max="9" />
+          <button type="button" id="button1" class="check-button" onclick="check(1)">Check</button>
+        </form>
+        <form id="form2" class="form">
+          <input id="box20" class="box" type="number" min="0" max="9" />
+          <input id="box21" class="box" type="number" min="0" max="9" />
+          <input id="box22" class="box" type="number" min="0" max="9" />
+          <input id="box23" class="box" type="number" min="0" max="9" />
+          <input id="box24" class="box" type="number" min="0" max="9" />
+          <button type="button" id="button2" class="check-button" onclick="check(2)">Check</button>
+        </form>
+        <form id="form3" class="form">
+          <input id="box30" class="box" type="number" min="0" max="9" />
+          <input id="box31" class="box" type="number" min="0" max="9" />
+          <input id="box32" class="box" type="number" min="0" max="9" />
+          <input id="box33" class="box" type="number" min="0" max="9" />
+          <input id="box34" class="box" type="number" min="0" max="9" />
+          <button type="button" id="button3" class="check-button" onclick="check(3)">Check</button>
+        </form>
+        <form id="form4" class="form">
+          <input id="box40" class="box" type="number" min="0" max="9" />
+          <input id="box41" class="box" type="number" min="0" max="9" />
+          <input id="box42" class="box" type="number" min="0" max="9" />
+          <input id="box43" class="box" type="number" min="0" max="9" />
+          <input id="box44" class="box" type="number" min="0" max="9" />
+          <button type="button" id="button4" class="check-button" onclick="check(4)">Check</button>
+        </form>
+        <form>
+          <button type="button" id="reset-button" onclick="reSet()">Reset</button>
+        </form>
+      </div>
+      <div id="footer">
+        <h3><span class="text-yellow">How to </span><span class="text-green">play ?</span></h3>
+        <p class="footer-para">This game involes guessing a 5 digit randomly generated code.</p>
+        <ul type="disc">
+          <li>Enter a single digit in each box of a row (horizontally) to make a 5digit number.</li>
+          <li>Press the <span class="italic">Check</span> button next to the row, to check your guess.</li>
+          <li>If a digit is not present anywhere in the generated code, the box will turn <span class="italic text-red">Red</span>.</li>
+          <li>If a digit is present anywhere in the generated code, the box will turn <span class="italic text-yellow">Yellow</span>.</li>
+          <li>If a digit is present at the exact same place in the generated code, the box will turn <span class="italic text-green">Green</span>.</li>
+          <li>Use your logic to find the code in 5 attempts.</li>
+        </ul>
+        <p class="footer-para">
+          <span class="underline italic">Note</span> <br />
+          Reset once before start playing, or to start a new game. Once you reset, a single random code is generated to guess in 5 attempts
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const code = [""];
+      let attempts = 0;
+
+      function reSet() {
+        //To generate a new code and restart the game
+        console.clear();
+        attempts = 0;
+        let num = Math.floor(Math.random() * 10);
+        for (let i = 0; i < 5; i++) {
+          while (code.includes(num)) {
+            attempt = 0;
+            num = Math.floor(Math.random() * 10);
+          }
+          code[i] = num;
+        }
+        console.log("generated code:", code);
+        const boxes = document.querySelectorAll(".box");
+        for (box of boxes) {
+          box.value = " ";
+          box.style.backgroundColor = "white";
+          box.readOnly = false;
+        }
+        for (let i = 0; i < 5; i++) {
+          document.getElementById("button" + i).disabled = false;
+        }
+      }
+
+      function check(row) {
+        attempts++;
+        const input = [""];
+        let yellow = 0;
+        let green = 0;
+        for (i = 0; i < 5; i++) {
+          input[i] = +document.getElementById("box" + row + i).value;
+          document.getElementById("box" + row + i).readOnly = true;
+          document.getElementById("box" + row + i).style.backgroundColor = "rgb(250, 100, 100)";
+          if (code.includes(input[i])) {
+            document.getElementById("box" + row + i).style.backgroundColor = "rgb(255, 206, 88)";
+            yellow++;
+          }
+          if (code[i] === input[i]) {
+            document.getElementById("box" + row + i).style.backgroundColor = "rgb(50, 200, 120)";
+            green++;
+          }
+        }
+        document.getElementById("button" + row).disabled = true;
+        console.log(input);
+        if (green === 5) {
+          alert("Congratulations!\nYou Won!");
+        } else if (attempts === 5) {
+          alert("You Lost!\nTry Again!");
+        }
+      }
+    </script>
+  </body>
+</html>
