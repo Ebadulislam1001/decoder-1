@@ -181,6 +181,14 @@
     </div>
     <script type="text/javascript">
       const code = [""];
+      let num = Math.floor(Math.random() * 10);
+      for (let i = 0; i < 5; i++) {
+        while (code.includes(num)) {
+          num = Math.floor(Math.random() * 10);
+        }
+        code[i] = num;
+      }
+      console.log("generated code:", code);
       let attempts = 0;
 
       function reSet() {
@@ -190,7 +198,6 @@
         let num = Math.floor(Math.random() * 10);
         for (let i = 0; i < 5; i++) {
           while (code.includes(num)) {
-            attempt = 0;
             num = Math.floor(Math.random() * 10);
           }
           code[i] = num;
@@ -229,6 +236,12 @@
         console.log(input);
         if (green === 5) {
           alert("Congratulations!\nYou Won!");
+          for (let row = 0; row < 5; row++) {
+            for (let i = 0; i < 5; i++) {
+              document.getElementById("box" + row + i).readOnly = true;
+            }
+            document.getElementById("button" + row).disabled = true;
+          }
         } else if (attempts === 5) {
           alert("You Lost!\nTry Again!");
         }
