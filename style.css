@@ -1,0 +1,120 @@
+#body {
+    background-color: rgb(40, 60, 80);
+    margin: 0;
+    padding: 0;
+}
+
+#column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#heading {
+    width: 300px;
+    margin: 16px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-section {
+    width: 300px;
+    margin: 16px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer {
+    width: 300px;
+    margin: 16px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(200, 220, 240);
+    border-radius: 12px;
+    color: white;
+}
+
+#reset-button {
+    min-height: 32px;
+    width: 96px;
+    background-color: rgb(200, 220, 240);
+    border: 2px solid rgb(95, 109, 122);
+    border-radius: 4px;
+    margin: 16px auto;
+}
+
+.text-green {
+    color: rgb(50, 200, 120);
+}
+
+.text-yellow {
+    color: rgb(255, 206, 88);
+}
+
+.text-red {
+    color: rgb(250, 100, 100);
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.check-button {
+    max-width: 64px;
+    min-height: 32px;
+    background-color: rgb(220, 240, 250);
+    border: 2px solid rgb(140, 160, 180);
+    border-radius: 4px;
+    /* margin: 0 16px; */
+}
+
+p {
+    width: 280px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 72px;
+    font-family: "Courier New", Courier, monospace;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 24px;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+}
+
+form {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 18px 0px;
+}
+
+input {
+    max-width: 28px;
+    min-height: 30px;
+    padding-left: 12px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-style: bold;
+}
+
+ul {
+    margin: 20px;
+}
